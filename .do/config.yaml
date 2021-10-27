@@ -1,0 +1,20 @@
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
+name: content-manager-api
+region: nyc
+services:
+  - build_command: yarn build
+    environment_slug: node-js
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: miguelredujo/content-manager-api
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: basic-xs
+    name: content-manager-api
+    routes:
+      - path: /
+    run_command: yarn start
+    source_dir: /
