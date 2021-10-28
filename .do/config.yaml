@@ -1,7 +1,7 @@
 alerts:
   - rule: DEPLOYMENT_FAILED
   - rule: DOMAIN_FAILED
-name: content-manager-api
+name: new-test-00
 region: nyc
 services:
   - build_command: yarn build
@@ -9,11 +9,11 @@ services:
     github:
       branch: main
       deploy_on_push: true
-      repo: miguelredujo/content-manager-api
+      repo: miguelredujo/new-test-00
     http_port: 8080
     instance_count: 1
     instance_size_slug: basic-xs
-    name: content-manager-api
+    name: new-test-00
     routes:
       - path: /
     run_command: yarn start
